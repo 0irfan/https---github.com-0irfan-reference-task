@@ -14,7 +14,7 @@ class Task(models.Model):
     class Meta:
         db_table = "reference_task" 
 
-# Create your models here.
+
 class Files(models.Model):
     refernce_id = models.ForeignKey(Task,on_delete= models.CASCADE)
     date_added = models.DateTimeField(auto_now_add= True)
@@ -27,5 +27,12 @@ class Files(models.Model):
 
     class Meta:
         db_table = "reference_files"
+
+class Notes(model.Model):
+    notes_name = models.CharField(max_length = 255)
+    notes_description = models.TextField()
+    
+    class Meta:
+        db_table = "reference_notes"
 
 
