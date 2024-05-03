@@ -1,7 +1,7 @@
 from rest_framework import generics
 from .permissions import IsAdmin
-from .models import (Files,Task)
-from .serializers import (FileSerializer,TaskSerializer, Noteserializers)
+from .models import (Files, Task, Notes)
+from .serializers import (FileSerializer,TaskSerializer, Noteserializer)
 from  rest_framework.generics import (ListCreateAPIView , RetrieveUpdateDestroyAPIView)
 from uuid import uuid4
 
@@ -31,7 +31,14 @@ class TaskDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = TaskSerializer
 
 
+class NotesCreate(generics.ListCreateAPIView):
+    queryset = Notes.objects.all()
+    serializer_class = NoteSerializer
 
+
+class NotesCreate(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Notes.objects.all()
+    serializer_class = NoteSerializer
 
 
     
