@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import (Files, Task) 
+from .models import (Files, Task, Notes) 
 
 class FileSerializer(serializers.ModelSerializer):
     
@@ -24,3 +24,8 @@ class TaskSerializer(serializers.ModelSerializer):
     class Meta:
         model = Task
         fields = '__all__'
+
+class NoteSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Notes
+        fields =  '__all__'
