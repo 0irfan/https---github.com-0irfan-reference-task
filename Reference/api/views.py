@@ -1,7 +1,7 @@
 from rest_framework import generics
 from .permissions import IsAdmin
 from .models import (Files,Task)
-from .serializers import (FileSerializer,TaskSerializer)
+from .serializers import (FileSerializer,TaskSerializer, Noteserializers)
 from  rest_framework.generics import (ListCreateAPIView , RetrieveUpdateDestroyAPIView)
 from uuid import uuid4
 
