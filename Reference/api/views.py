@@ -31,9 +31,12 @@ class TaskDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = TaskSerializer
 
 
+
 class NotesCreate(generics.ListCreateAPIView):
     queryset = Notes.objects.all()
     serializer_class = NoteSerializer
+    permission_classes = [IsAdmin]
+    
 
 
 class NotesCreate(generics.RetrieveUpdateDestroyAPIView):
